@@ -1,0 +1,26 @@
+import math, random
+def makeRandom (g,nid,_radius):
+
+	circleRandAngle = random.random() * math.pi *2
+	circleRandRad = random.random() * _radius
+
+	n = g[nid]
+	mX = int(math.cos(circleRandAngle) * circleRandRad)
+	mY = int(math.sin(circleRandAngle) * circleRandRad)
+
+	n.x += mX
+	n.y += mY
+
+# Set the radius here
+RADIUS = 15
+
+g = fl.glyph
+fl.SetUndo()
+i = 0
+while i < len(g.nodes):
+	n = g[i]
+	if n.selected:
+		makeRandom(g,i,RADIUS)
+		i += 1
+
+fl.UpdateGlyph()
