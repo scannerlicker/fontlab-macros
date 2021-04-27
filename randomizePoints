@@ -1,3 +1,4 @@
+# Add documentation with an example image so we can see what this does?
 import math, random
 def makeRandom (g,nid,_radius):
 
